@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+}
+.container img {
+  position: absolute;
+  left: 500px;
+  top: 200px;
+}
+
+.container h1 {
+  position: absolute;
+  left: 710px;
+  top: 295px;
+  color: white;
+  font-size: 18px;
+}
+.container .display {
+  position: absolute;
+  left: 642px;
+  top: 326px;
+  width: 239px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.962);
+  color: rgb(26, 26, 26);
+  border-radius: 5px;
+  text-align: right;
+  padding: 20px 10px;
+  font-size: 42px;
+}
+
+.display {
+  transition: 0.4s;
+}
+
+/* LIGHT yoqilganda */
+.display.light {
+  box-shadow:
+    0 0 10px #fff,
+    0 0 30px blue,
+    0 0 60px blue,
+    0 0 100px orange;
+  filter: brightness(1.2);
+}
+
+#light {
+  position: absolute;
+  top: 475px;
+  left: 660px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 4px solid rgba(0, 0, 0, 0.388);
+  background-color: rgb(192, 187, 187);
+  color: darkred;
+  font-size: 10px;
+  font-family: sans-serif;
+  font-weight: 600;
+  outline: none;
+}
+
+#click {
+  position: absolute;
+  left: 710px;
+  top: 520px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+}
+#reset {
+  position: absolute;
+  left: 827px;
+  top: 477px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  color: darkred;
+  background-color: rgba(255, 255, 255, 0.248);
+  font-size: 10px;
+  font-family: sans-serif;
+  font-weight: 600;
+  outline: none;
+}
