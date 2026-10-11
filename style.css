@@ -1,90 +1,342 @@
+/* 1-exem: Umumiy sozlamalar */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(
+    ellipse at center,
+    #282b33 0%,
+    #101114 65%,
+    #080809 100%
+  );
+}
+
+/* 2-exem: Asosiy sahifa */
 .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+/* 3-exem: Tasbeh korpusi */
+.tasbeh {
   position: relative;
-}
-.container img {
-  position: absolute;
-  left: 500px;
-  top: 200px;
-}
-
-.container h1 {
-  position: absolute;
-  left: 710px;
-  top: 295px;
-  color: white;
-  font-size: 18px;
-}
-.container .display {
-  position: absolute;
-  left: 642px;
-  top: 326px;
-  width: 239px;
-  height: 90px;
-  background-color: rgba(255, 255, 255, 0.962);
-  color: rgb(26, 26, 26);
-  border-radius: 5px;
-  text-align: right;
-  padding: 20px 10px;
-  font-size: 42px;
+  width: 360px;
+  height: 440px;
+  max-width: 100%;
+  border-radius: 48px 48px 60px 60px;
+  background: linear-gradient(
+    125deg,
+    #3a3b40 0%,
+    #17181c 22%,
+    #08090b 55%,
+    #292a2f 100%
+  );
+  border: 2px solid #484950;
+  box-shadow:
+    inset 3px 3px 5px #66666a,
+    inset -5px -6px 12px #050506,
+    0 25px 50px #000a,
+    0 0 2px 2px #000;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
 }
 
+/* 4-exem: Korpus ustidagi yorug'lik */
+.tasbeh::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 40px 40px 52px 52px;
+  border: 1px solid #ffffff12;
+  pointer-events: none;
+}
+
+/* 5-exem: Brend nomi */
+.brand {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-shadow: 0 2px 4px #000;
+}
+
+/* 6-exem: Displey ramkasi */
 .display {
-  transition: 0.4s;
+  position: absolute;
+  top: 80px;
+  left: 10%;
+  width: 80%;
+  height: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px 18px;
+  overflow: hidden;
+  border: 5px solid #17181a;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #d5d7cf, #f5f6e9 50%, #c3c7bb);
+  color: #171a16;
+  font-family: "Courier New", monospace;
+  font-size: 58px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  box-shadow:
+    inset 0 4px 12px #0004,
+    0 0 0 2px #55565a,
+    0 5px 10px #0008;
+  transition:
+    box-shadow 0.3s,
+    filter 0.3s;
 }
 
-/* LIGHT yoqilganda */
+/* 7-exem: Tugmalar joylashuvi */
+.controls {
+  position: absolute;
+  top: 225px;
+  left: 0;
+  width: 100%;
+  height: 145px;
+}
+
+/* 8-exem: Light tugmasi */
+.light-btn {
+  position: absolute;
+  left: 28px;
+  top: 8px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 4px solid #34353a;
+  background: linear-gradient(145deg, #e0e0e0, #777981);
+  color: #781616;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  box-shadow:
+    inset 0 2px 4px #fff9,
+    0 5px 8px #0009;
+  transition: 0.15s;
+}
+
+.light-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #6e1717;
+  box-shadow: 0 0 3px #600;
+}
+
+.light-btn:active,
+.reset-btn:active {
+  transform: scale(0.92);
+}
+
+/* 9-exem: Katta sanash tugmasi */
+.click-btn {
+  position: absolute;
+  left: 50%;
+  top: 35px;
+  transform: translateX(-50%);
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  border: 5px solid #414248;
+  background: linear-gradient(145deg, #303136, #090a0c 65%);
+  cursor: pointer;
+  box-shadow:
+    inset 0 4px 7px #ffffff20,
+    inset 0 -5px 8px #000,
+    0 7px 12px #000b,
+    0 0 0 2px #111;
+  transition:
+    box-shadow 0.15s,
+    transform 0.15s;
+}
+
+.click-btn:hover {
+  box-shadow:
+    inset 0 4px 7px #ffffff20,
+    inset 0 -5px 8px #000,
+    0 0 15px #7778;
+}
+
+.click-btn:active {
+  transform: translateX(-50%) scale(0.94);
+}
+
+.click-inner {
+  display: block;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid #ffffff16;
+  background: linear-gradient(145deg, #222328, #111215);
+  box-shadow: inset 0 3px 7px #000;
+}
+
+/* 10-exem: Reset tugmasi */
+.reset-btn {
+  position: absolute;
+  right: 28px;
+  top: 12px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 4px solid #33343a;
+  background: linear-gradient(145deg, #ddd, #74767b);
+  color: #741616;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow:
+    inset 0 2px 4px #fff8,
+    0 5px 8px #0009;
+  transition: 0.15s;
+}
+
+/* 11-exem: Pastki yozuv */
+.bottom-label {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #898a90;
+}
+
+/* 12-exem: Light yoqilgandagi effekt */
 .display.light {
   box-shadow:
-    0 0 10px #fff,
-    0 0 30px blue,
-    0 0 60px blue,
-    0 0 100px orange;
-  filter: brightness(1.2);
+    inset 0 0 12px #fff,
+    0 0 12px #fff,
+    0 0 28px #1685ff,
+    0 0 48px #1685ff99;
+  filter: brightness(1.15);
 }
 
-#light {
-  position: absolute;
-  top: 475px;
-  left: 660px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 4px solid rgba(0, 0, 0, 0.388);
-  background-color: rgb(192, 187, 187);
-  color: darkred;
-  font-size: 10px;
-  font-family: sans-serif;
-  font-weight: 600;
-  outline: none;
+.tasbeh.lit {
+  box-shadow:
+    inset 3px 3px 5px #66666a,
+    inset -5px -6px 12px #050506,
+    0 25px 50px #000a,
+    0 0 22px #1685ff44;
 }
 
-#click {
-  position: absolute;
-  left: 710px;
-  top: 520px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: none;
-  background: transparent;
+.tasbeh.lit .light-icon {
+  background: #fff;
+  box-shadow:
+    0 0 8px #fff,
+    0 0 18px #1685ff;
 }
-#reset {
-  position: absolute;
-  left: 827px;
-  top: 477px;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: none;
-  color: darkred;
-  background-color: rgba(255, 255, 255, 0.248);
-  font-size: 10px;
-  font-family: sans-serif;
-  font-weight: 600;
-  outline: none;
+
+/* 13-exem: Telefonlar */
+@media (max-width: 400px) {
+  .tasbeh {
+    width: 320px;
+    height: 410px;
+    border-radius: 42px 42px 52px 52px;
+  }
+
+  .brand {
+    top: 30px;
+    font-size: 18px;
+  }
+
+  .display {
+    top: 75px;
+    height: 100px;
+    font-size: 48px;
+  }
+
+  .controls {
+    top: 205px;
+  }
+
+  .light-btn {
+    left: 20px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .reset-btn {
+    right: 20px;
+    width: 49px;
+    height: 49px;
+  }
+
+  .click-btn {
+    width: 95px;
+    height: 95px;
+  }
+
+  .bottom-label {
+    bottom: 20px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 350px) {
+  .tasbeh {
+    width: 285px;
+    height: 380px;
+  }
+
+  .brand {
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+
+  .display {
+    height: 88px;
+    font-size: 40px;
+  }
+
+  .controls {
+    top: 190px;
+  }
+
+  .light-btn {
+    left: 14px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .reset-btn {
+    right: 14px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .click-btn {
+    width: 85px;
+    height: 85px;
+  }
 }

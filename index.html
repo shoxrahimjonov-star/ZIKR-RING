@@ -1,24 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="uz">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tasbeh</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#101114" />
+    <title>ZIKR RING</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <img src="Screenshot 2026-04-29 142607.png" alt="tasbeh">
-      <h1>ZIKR RING</h1>
-      <div class="display">0</div>
+      <main class="tasbeh" id="tasbeh">
+        <div class="brand">ZIKR RING</div>
 
-      <div class="btns">
-        <button class="btn click" id="click"></button>
-        <button class="btn light" id="light">Light</button>
-        <button class="btn reset" id="reset">reset</button>
-        
-      </div>
+        <div class="display" id="display" aria-live="polite">0</div>
+
+        <div class="controls">
+          <button class="light-btn" id="light" type="button">
+            <span class="light-icon"></span>
+            Light
+          </button>
+
+          <button
+            class="click-btn"
+            id="click"
+            type="button"
+            aria-label="Sanash"
+          >
+            <span class="click-inner"></span>
+          </button>
+
+          <button class="reset-btn" id="reset" type="button">↻</button>
+        </div>
+
+        <div class="bottom-label">DIGITAL TASBIH COUNTER</div>
+      </main>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
